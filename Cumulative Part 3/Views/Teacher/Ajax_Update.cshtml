@@ -1,0 +1,53 @@
+﻿@model Cumulative_Part_3.Models.Teacher
+@{
+    ViewBag.Title = "Ajax_Update";
+}
+@{
+
+    /*
+    This file uses a combination of server rendering and ajax logic.
+    - Server Rendering to pull current information about the teacher and display in fields
+    - Request to update teacher with new values is fulfilled by ajax
+    */
+}
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/Teacher/List">Back To Teacher</a>
+    </nav>
+    <h2>Update @Model.Name @Model.LastName</h2>
+    @{
+        /* AJAX Request to update teacher */
+        /* No form submission needed */
+        /* button onclick will handle form submission */
+        /* Each item has an ID for validation && ajax submission */
+
+
+    }
+    <div class="inputrow">
+        <label for="Name">First Name:</label>
+        <input type="text" id="Name" name="Name" value="@Model.Name" />
+
+    </div>
+    <div class="inputrow">
+        <label for="LastName">Last Name:</label>
+        <input type="text" id="LastName" name="LastName" value="@Model.LastName" />
+
+    </div>
+    <div class="inputrow">
+        <label for="EmpNum">Employee Number:</label>
+        <input type="text" id="EmpNum" name="EmpNum" value="@Model.EmpNum" />
+    </div>
+    <div class="inputrow">
+        <label for="HireDate">Hire Date:</label>
+        <input type="date" id="HireDate" name="HireDate" value="@Model.HireDate" />
+    </div>
+    <div class="inputrow">
+        <label for="Salary">Salary:</label>
+        <input type="date" id="Salary" name="Salary" value="@Model.Salary" />
+    </div>
+    @{
+        //AddTeacher() is a JS method defined in /Scripts/teacher.js
+    }
+    <button onclick="UpdateTeacher(@Model.Id);">Update Teacher</button>
+</div>

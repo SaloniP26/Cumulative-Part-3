@@ -1,0 +1,148 @@
+﻿﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+nav {
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+#containerlist, #containershow {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+.listitem {
+    margin: 10px 0;
+}
+
+.inputrow {
+    margin-bottom: 15px;
+    width: 40%;
+    overflow: hidden;
+}
+
+    .inputrow input, .inputrow textarea {
+        float: right;
+    }
+
+    .inputrow textarea {
+        width: 100%;
+        max-width: none;
+        float: none;
+    }
+
+    .inputrow input[type="submit"] {
+        float: none;
+        margin-top: 50px;
+    }
+
+
+.btnBack {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    color: white;
+    background-color: Blue;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btnDel {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    float: right;
+}
+
+.btnNew {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid blue;
+    border-radius: 5px;
+    color: blue;
+    background-color: yellow;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    float: right;
+}
+
+.btnUpdate {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid blue;
+    border-radius: 5px;
+    color: white;
+    background-color: lightpink;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    margin-bottom: 15px;
+    overflow: hidden;
+    margin-top: 25px;
+}
+
+
+
+.btnCreate {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    background-color: orange;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    margin-bottom: 15px;
+    width: 40%;
+    overflow: hidden;
+    margin-top: 25px;
+}
+
+.btnDelCon {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}

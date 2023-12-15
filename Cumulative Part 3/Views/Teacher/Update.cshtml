@@ -1,0 +1,95 @@
+﻿@model Cumulative_Part_3.Models.Teacher
+@{
+    ViewBag.Title = "Update";
+}
+
+<div id="containershow">
+    <nav>
+        <a class="btnBack" href="/Teacher/Show/@Model.Id">Back</a>
+    </nav>
+    <h2>Update Teacher</h2>
+    <form method="POST" action="/Teacher/Update/@Model.Id" onsubmit="return validateForm();">
+        <div class="inputrow">
+            <label for="Name">First Name:</label>
+            <input type="text" id="Name" name="Name" value="@Model.Name" />
+
+        </div>
+        <div class="inputrow">
+            <label for="LastName">Last Name:</label>
+            <input type="text" id="LastName" name="LastName" value="@Model.LastName" />
+
+        </div>
+        <div class="inputrow">
+            <label for="EmpNum">Employee Number:</label>
+            <input type="text" id="EmpNum" name="EmpNum" value="@Model.EmpNum" />
+        </div>
+        <div class="inputrow">
+            <label for="HireDate">Hire Date:</label>
+            <input type="text" id="HireDate" name="HireDate" value="@Model.HireDate" />
+        </div>
+        <div class="inputrow">
+            <label for="Salary">Salary:</label>
+            <input type="text" id="Salary" name="Salary" value="@Model.Salary" />
+        </div>
+        <div class="inputrow">
+            <input type="submit" class="btnCreate" value="Update Teacher" />
+        </div>
+    </form>
+    <script>
+        function validateForm() {
+            var teacherName = document.getElementById("Name").value;
+            var teacherLastName = document.getElementById("LastName").value;
+            var teacherEmpNum = document.getElementById("EmpNum").value;
+            var teacherHireDate = document.getElementById("HireDate").value;
+            var teacherSalary = document.getElementById("Salary").value;
+
+            // Validate each field
+            if (!validateNotEmpty(teacherName, "First Name") ||
+                !validateNotEmpty(teacherLastName, "Last Name") ||
+                !validateNotEmpty(teacherEmpNum, "Employee Number") ||
+                !validateNotEmpty(teacherHireDate, "Hire Date") ||
+                !validateNotEmpty(teacherSalary, "Salary") ||
+                !validateAlphabetsAndSpaces(teacherName, "First Name") ||
+                !validateAlphabetsAndSpaces(teacherLastName, "Last Name") ||
+                !validateEmployeeNumber(teacherEmpNum, "Employee Number") ||
+                !validateSalary(teacherSalary, "Salary")) {
+                return false; // Stop form submission if any validation fails
+            }
+
+            return true; // All validation passed, allow form submission
+        }
+
+        function validateNotEmpty(fieldValue, fieldName) {
+            if (fieldValue.trim() === "") {
+                alert(fieldName + " cannot be empty");
+                return false;
+            }
+            return true;
+        }
+
+        function validateAlphabetsAndSpaces(value, fieldName) {
+            if (!/^[a-zA-Z\s]+$/.test(value)) {
+                alert(fieldName + " should only contain letters and spaces");
+                return false;
+            }
+            return true;
+        }
+
+        function validateEmployeeNumber(value, fieldName) {
+            if (!/^[a-zA-Z]\d{3}$/.test(value)) {
+                alert(fieldName + " should start with one alphabet character followed by exactly three numbers");
+                return false;
+            }
+            return true;
+        }
+
+        function validateSalary(value, fieldName) {
+            if (!/^\d+(\.\d+)?$/.test(value)) {
+                alert(fieldName + " should only contain numbers and optional decimal");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</div>
+

@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+<div id="containershow">
+    <nav>
+        <a class="btnBack" href="/Teacher/List">Back</a>
+    </nav>
+    <h2>New Teacher</h2>
+    <form method="POST" action="/Teacher/Create">
+        <div class="inputrow">
+            <label for="Name">First Name:</label>
+            <input type="text" id="Name" name="Name" />
+
+        </div>
+        <div class="inputrow">
+            <label for="LastName">Last Name:</label>
+            <input type="text" id="LastName" name="LastName" />
+
+        </div>
+        <div class="inputrow">
+            <label for="EmpNum">Employee Number:</label>
+            <input type="text" id="EmpNum" name="EmpNum" />
+
+        </div>
+        <div class="inputrow">
+            <label for="HireDate">Hire Date:</label>
+            <input type="date" id="HireDate" name="HireDate" />
+        </div>
+        <div class="inputrow">
+            <label for="Salary">Salary:</label>
+            <input type="text" id="Salary" name="Salary" />
+        </div>
+        <div>
+            <input class="btnCreate" type="submit" onclick="return validateForm();" value="Create Teacher" />
+        </div>
+    </form>
+
+    <script>
+    function validateForm() {
+        var teacherName = document.getElementById("Name").value;
+        var teacherLastName = document.getElementById("LastName").value;
+        var teacherEmpNum = document.getElementById("EmpNum").value;
+        var teacherHireDate = document.getElementById("HireDate").value;
+        var teacherSalary = document.getElementById("Salary").value;
+
+
+        // Check if the teacher name is empty
+        if (teacherName.trim() === "") {
+            alert("First Name cannot be empty");
+            return false;
+        }
+
+        //Only letters and spaces
+        if (!/^[a-zA-Z\s]+$/.test(teacherName)) {
+            alert("Teacher name should only contain letters and spaces");
+            return false;
+        }
+
+        // Check if the teacher last name is empty
+        if (teacherLastName.trim() === "") {
+            alert("Last Name cannot be empty");
+            return false;
+        }
+
+        //Only letters and spaces
+        if (!/^[a-zA-Z\s]+$/.test(teacherLastName)) {
+            alert("Teacher name should only contain letters and spaces");
+            return false;
+        }
+
+        // Check if the teacher employee number is empty
+        if (teacherEmpNum.trim() === "") {
+            alert("Employee Number cannot be empty");
+            return false;
+        }
+
+        //Only one alphabet and 3 numbers
+        if (!/^[a-zA-Z]\d{3}$/.test(teacherEmpNum)) {
+            alert("Employee Number should start with one alphabet character followed by exactly three numbers");
+            return false;
+        }
+
+        // Check if the teacher hire date is empty
+        if (teacherHireDate.trim() === "") {
+            alert("Hire Date cannot be empty");
+            return false;
+        }
+
+        // Check if the teacher salary is empty
+        if (teacherSalary.trim() === "") {
+            alert("Salary cannot be empty");
+            return false;
+        }
+
+        //Only numbers and decimals
+        if (!/^\d+(\.\d+)?$/.test(teacherSalary)) {
+            alert("Salary should only contain numbers and optional decimal");
+            return false;
+        }
+
+
+    }
+    </script>
+
+</div>

@@ -1,0 +1,17 @@
+﻿@model Cumulative_Part_3.Models.Teacher
+@{
+    ViewBag.Title = "Show";
+}
+<div id="containershow">
+    <nav>
+        <a class="btnBack" href="/Teacher/List">Back</a>
+        <a class="btnDel" href="/Teacher/DeleteConfirm/@Model.Id">Delete</a>
+
+    </nav>
+    <h2>@Model.Name @Model.LastName</h2>
+    <p><a href="/Teacher/Update/@Model.Id" class="btnUpdate">Update</a></p>
+    <p style="font-style:italic;">Employee Number: @Model.EmpNum</p>
+    <p style="font-style:italic;">Hire Date: @Model.HireDate</p>
+    <p style="font-style:italic;">Salary: @Model.Salary</p>
+
+</div>
