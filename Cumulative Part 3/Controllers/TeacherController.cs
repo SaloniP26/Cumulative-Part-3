@@ -63,7 +63,7 @@ namespace Cumulative_Part_3.Controllers
             return View();
         }
 
-        //GET : /Author/Ajax_New
+        //GET : /teacher/Ajax_New
         public ActionResult Ajax_New()
         {
             return View();
@@ -99,11 +99,11 @@ namespace Cumulative_Part_3.Controllers
         }
 
         /// <summary>
-        /// Routes to a dynamically generated "Author Update" Page. Gathers information from the database.
+        /// Routes to a dynamically generated "teacher Update" Page. Gathers information from the database.
         /// </summary>
-        /// <param name="id">Id of the Author</param>
-        /// <returns>A dynamic "Update Author" webpage which provides the current information of the author and asks the user for new information as part of a form.</returns>
-        /// <example>GET : /Author/Update/5</example>
+        /// <param name="id">Id of the teacher</param>
+        /// <returns>A dynamic "Update teacher" webpage which provides the current information of the teacher and asks the user for new information as part of a form.</returns>
+        /// <example>GET : /teacher/Update/5</example>
         public ActionResult Update(int id)
         {
             TeacherDataController controller = new TeacherDataController();
@@ -122,22 +122,24 @@ namespace Cumulative_Part_3.Controllers
 
 
         /// <summary>
-        /// Receives a POST request containing information about an existing author in the system, with new values. Conveys this information to the API, and redirects to the "Author Show" page of our updated author.
+        /// Receives a POST request containing information about an existing teacher in the system, with new values. Conveys this information to the API, and redirects to the "teacher Show" page of our updated teacher.
         /// </summary>
-        /// <param name="id">Id of the Author to update</param>
-        /// <param name="AuthorFname">The updated first name of the author</param>
-        /// <param name="AuthorLname">The updated last name of the author</param>
-        /// <param name="AuthorBio">The updated bio of the author.</param>
-        /// <param name="AuthorEmail">The updated email of the author.</param>
-        /// <returns>A dynamic webpage which provides the current information of the author.</returns>
+        /// <param name="id">Id of the teacher to update</param>
+        /// <param name="Name">The updated first name of the teacher</param>
+        /// <param name="LastName">The updated last name of the teacher</param>
+        /// <param name="EmpNum">The updated employee number of the teacher.</param>
+        /// <param name="HireDate">The updated hire date of the teacher.</param>
+        /// <param name="Salary">The updated hire date of the teacher.</param>
+        /// <returns>A dynamic webpage which provides the current information of the teacher.</returns>
         /// <example>
-        /// POST : /Author/Update/10
+        /// POST : /teacher/Update/10
         /// FORM DATA / POST DATA / REQUEST BODY 
         /// {
-        ///	"AuthorFname":"Christine",
-        ///	"AuthorLname":"Bittle",
-        ///	"AuthorBio":"Loves Coding!",
-        ///	"AuthorEmail":"christine@test.ca"
+        ///	"Name":Saloni"",
+        ///	"lastName":"Pawar",
+        ///	"EmpNum":"T677",
+        ///	"Hiredate":"27/11/2023"
+        ///	"Salary":"50.60"
         /// }
         /// </example>
         [HttpPost]
